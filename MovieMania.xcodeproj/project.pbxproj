@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		836D227B2F8C3430004C8FA5 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = AA000002AAAA000000000001 /* Networking */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		836D21E32F8C1D78004C8FA5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				836D227B2F8C3430004C8FA5 /* Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = MovieMania;
 			packageProductDependencies = (
+				AA000002AAAA000000000001 /* Networking */,
 			);
 			productName = MovieMania;
 			productReference = 836D21D52F8C1D75004C8FA5 /* MovieMania.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 836D21CC2F8C1D75004C8FA5;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AA000001AAAA000000000001 /* XCLocalSwiftPackageReference "Packages/Networking" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 836D21D62F8C1D75004C8FA5 /* Products */;
 			projectDirPath = "";
@@ -578,6 +587,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		AA000001AAAA000000000001 /* XCLocalSwiftPackageReference "Packages/Networking" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Networking;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA000002AAAA000000000001 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 836D21CD2F8C1D75004C8FA5 /* Project object */;
 }
