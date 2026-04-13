@@ -68,6 +68,20 @@ struct MovieListView: View {
 
     @ViewBuilder
     private var movieGrid: some View {
+        if viewModel.filteredMovies.isEmpty && !viewModel.movies.isEmpty {
+            if !viewModel.searchText.isEmpty {
+                ContentUnavailableView.search(text: viewModel.searchText)
+            } else {
+                ContentUnavailableView {
+                    Label("No Movies Found", systemImage: "film")
+                } description: {
+                    if let genre = viewModel.selectedGenre {
+                        Text("There are no movies matching the \"\(genre.name)\" category.")
+                    }
+                }
+            }
+        }
+
         LazyVGrid(columns: columns, spacing: AppSpacing.lg) {
             ForEach(viewModel.filteredMovies) { movie in
                 Button {
