@@ -31,6 +31,8 @@
 		836D21D52F8C1D75004C8FA5 /* MovieMania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		836D21E22F8C1D78004C8FA5 /* MovieManiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieManiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		836D21EC2F8C1D78004C8FA5 /* MovieManiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieManiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83CFG00001000000000000A1 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		83CFG00001000000000000A2 /* Secrets.sample.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.sample.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -93,11 +95,21 @@
 		836D21CC2F8C1D75004C8FA5 = {
 			isa = PBXGroup;
 			children = (
+				83CFG00001000000000000B1 /* Config */,
 				836D21D72F8C1D75004C8FA5 /* MovieMania */,
 				836D21E52F8C1D78004C8FA5 /* MovieManiaTests */,
 				836D21EF2F8C1D78004C8FA5 /* MovieManiaUITests */,
 				836D21D62F8C1D75004C8FA5 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		83CFG00001000000000000B1 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				83CFG00001000000000000A1 /* Secrets.xcconfig */,
+				83CFG00001000000000000A2 /* Secrets.sample.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		836D21D62F8C1D75004C8FA5 /* Products */ = {
@@ -414,6 +426,7 @@
 		};
 		836D21F72F8C1D78004C8FA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83CFG00001000000000000A1 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -448,6 +461,7 @@
 		};
 		836D21F82F8C1D78004C8FA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83CFG00001000000000000A1 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
