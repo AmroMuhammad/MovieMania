@@ -103,6 +103,25 @@ struct MovieListView: View {
         if viewModel.isLoadingMore {
             ProgressView()
                 .padding()
+        } else if let error = viewModel.error, !viewModel.movies.isEmpty {
+            paginationErrorFooter(message: error)
         }
+    }
+
+    @ViewBuilder
+    private func paginationErrorFooter(message: String) -> some View {
+        VStack(spacing: AppSpacing.sm) {
+            Text(message)
+                .font(AppFonts.caption)
+                .foregroundStyle(AppColors.secondaryLabel)
+                .multilineTextAlignment(.center)
+
+            Button("Retry") {
+                viewModel.retryPagination()
+            }
+            .buttonStyle(.bordered)
+            .tint(AppColors.primary)
+        }
+        .padding()
     }
 }
