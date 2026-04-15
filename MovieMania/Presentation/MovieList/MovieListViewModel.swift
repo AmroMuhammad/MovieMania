@@ -155,6 +155,11 @@ final class MovieListViewModel: ObservableObject {
         loadGenresSubject.send()
     }
 
+    func retryPagination() {
+        guard !movies.isEmpty, hasMorePages else { return }
+        loadPageSubject.send(currentPage + 1)
+    }
+
     @MainActor
     func refresh() async {
         await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
