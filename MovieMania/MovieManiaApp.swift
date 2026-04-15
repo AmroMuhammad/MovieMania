@@ -13,14 +13,12 @@ struct MovieManiaApp: App {
     @State private var container = DependencyContainer()
     @State private var navigationPath = NavigationPath()
 
-    private let imageBaseURL = "https://image.tmdb.org/t/p"
-
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $navigationPath) {
                 MovieListView(
                     viewModel: container.makeMovieListViewModel(),
-                    imageBaseURL: imageBaseURL
+                    imageBaseURL: container.imageBaseURL
                 ) { movieID in
                     navigationPath.append(Route.movieDetail(id: movieID))
                 }
@@ -29,7 +27,7 @@ struct MovieManiaApp: App {
                     case .movieDetail(let id):
                         MovieDetailView(
                             viewModel: container.makeMovieDetailViewModel(movieID: id),
-                            imageBaseURL: imageBaseURL
+                            imageBaseURL: container.imageBaseURL
                         )
                     }
                 }

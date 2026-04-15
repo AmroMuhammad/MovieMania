@@ -15,7 +15,9 @@ final class DependencyContainer {
     let modelContainer: ModelContainer
 
     // MARK: - Configuration
-    private let apiConfiguration: APIConfiguration
+    let apiConfiguration: APIConfiguration
+
+    var imageBaseURL: String { apiConfiguration.imageBaseURL }
 
     // MARK: - Networking
     private lazy var httpClient: HTTPClient = URLSessionHTTPClient(configuration: apiConfiguration)
