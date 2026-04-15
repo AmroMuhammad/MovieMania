@@ -154,4 +154,24 @@ final class MovieListViewModel: ObservableObject {
         loadPageSubject.send(1)
         loadGenresSubject.send()
     }
+
+    @MainActor
+    func refresh() async {
+        await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+            var cancellable: AnyCancellable?
+            cancellable = $isLoading
+                .dropFirst()
+                .filter { !$0 }
+                .first()
+                .sink { _ in
+                    continuation.resume()
+                    cancellable?.cancel()
+                }
+
+            currentPage = 1
+            totalPages = 1
+            loadPageSubject.send(1)
+            loadGenresSubject.send()
+        }
+    }
 }
