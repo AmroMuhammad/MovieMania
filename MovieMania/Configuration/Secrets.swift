@@ -8,5 +8,11 @@
 import Foundation
 
 enum Secrets {
-    static let tmdbAPIKey = "27d5b7e4b80494ed9ff1855eaec1e45a"
+    static let tmdbAPIKey: String = {
+        guard let key = Bundle.main.object(forInfoDictionaryKey: "TMDBAPIKey") as? String,
+              !key.isEmpty else {
+            fatalError("TMDBAPIKey missing from Info.plist — set INFOPLIST_KEY_TMDBAPIKey in build settings.")
+        }
+        return key
+    }()
 }
