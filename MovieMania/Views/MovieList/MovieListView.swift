@@ -46,6 +46,9 @@ struct MovieListView: View {
                 movieGrid
             }
         }
+        .refreshable {
+            await viewModel.refresh()
+        }
     }
 
     @ViewBuilder
